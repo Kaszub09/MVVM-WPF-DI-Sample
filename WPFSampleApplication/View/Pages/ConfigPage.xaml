@@ -59,11 +59,11 @@
                     <Label FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}"  Content="{Binding  AppViewModel.AppSubtitles[config_label_email_password]}" Grid.Column="1"  Grid.Row="3" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
                     <PasswordBox FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Name="EmailPassword"  Grid.Column="3"    Grid.Row="3"  VerticalContentAlignment="Center" />
 
-                    <Label FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Content="{Binding  AppViewModel.AppSubtitles[config_label_qguar_user]}" Grid.Column="1"  Grid.Row="5" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
-                    <TextBox FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Name="_qguarUsername" Text="{Binding QguarUsername,Mode=TwoWay}" Grid.Column="3"    Grid.Row="5" TextWrapping="NoWrap"  VerticalContentAlignment="Center"/>
+                    <Label FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Content="{Binding  AppViewModel.AppSubtitles[config_label_X_service_user]}" Grid.Column="1"  Grid.Row="5" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+                    <TextBox FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Name="_X_serviceUsername" Text="{Binding XServiceUsername,Mode=TwoWay}" Grid.Column="3"    Grid.Row="5" TextWrapping="NoWrap"  VerticalContentAlignment="Center"/>
 
-                    <Label FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}"  Content="{Binding  AppViewModel.AppSubtitles[config_label_qguar_password]}" Grid.Column="1"  Grid.Row="7" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
-                    <PasswordBox FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Name="TMSServicePassword" Grid.Column="3"    Grid.Row="7"  VerticalContentAlignment="Center" />
+                    <Label FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}"  Content="{Binding  AppViewModel.AppSubtitles[config_label_X_service_password]}" Grid.Column="1"  Grid.Row="7" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+                    <PasswordBox FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Name="XServicePassword" Grid.Column="3"    Grid.Row="7"  VerticalContentAlignment="Center" />
 
                     <Label  FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Content="{Binding  AppViewModel.AppSubtitles[config_label_interval_sec]}" Grid.Column="1" Grid.Row="9" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
                     <TextBox FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Text="{Binding  AppViewModel.Settings.Process.IntervalSec,Mode=TwoWay}" Grid.Column="3"    Grid.Row="9" TextWrapping="NoWrap"  VerticalContentAlignment="Center"/>

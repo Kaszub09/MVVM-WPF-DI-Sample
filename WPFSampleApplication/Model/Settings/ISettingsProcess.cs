@@ -7,7 +7,7 @@ namespace WPFSampleApplication.Model {
         DateTime ChosedDate { get; set; }
         string EmailCredName { get; set; }
         double IntervalSec { get; set; }
-        string TMSServiceCredName { get; set; }
+        string XServiceCredName { get; set; }
         bool RunProcessImmediately { get; set; }
 
         event PropertyChangedEventHandler PropertyChanged;

@@ -28,8 +28,8 @@
     <text id="config_tab_process_settings">Ustawienia procesu</text>
     <text id="config_label_email_user">Email - użytkownik</text>
     <text id="config_label_email_password">Email - hasło</text>
-    <text id="config_label_qguar_user">Qguar - użytkownik</text>
-    <text id="config_label_qguar_password">Qguar - hasło</text>
+    <text id="config_label_X_service_user">Usługa X - użytkownik</text>
+    <text id="config_label_X_service_password">Usługa X - hasło</text>
     <text id="config_label_interval_sec">Częstość uruchamiania (w sekundach)</text>
     <text id="config_label_start_process_immediately">Uruchom proces natychmiastowo</text>
     
@@ -115,8 +115,8 @@ odpalania procesów w tle</text>
     <text id="config_tab_process_settings">Process settings</text>
     <text id="config_label_email_user">Email - username</text>
     <text id="config_label_email_password">Email - password</text>
-    <text id="config_label_qguar_user">Qguar - username</text>
-    <text id="config_label_qguar_password">Qguar - password</text>
+    <text id="config_label_X_service_user">XService - username</text>
+    <text id="config_label_X_service_password">XService - password</text>
     <text id="config_label_interval_sec">Running interval (seconds)</text>
     <text id="config_label_start_process_immediately">Run process immediately</text>
 

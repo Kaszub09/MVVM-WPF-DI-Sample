@@ -24,7 +24,7 @@ namespace WPFSampleApplication.Model {
             }
         }
         public string EmailCredName { get; set; } = "EmailCredentials";
-        public string TMSServiceCredName { get; set; } = "TMSServiceCredentials";
+        public string XServiceCredName { get; set; } = "XServiceCredentials";
         public bool RunProcessImmediately { get; set; } = false;
     }
 }

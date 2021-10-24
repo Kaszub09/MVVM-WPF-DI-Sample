@@ -16,7 +16,7 @@ namespace WPFSampleApplication.ViewModel {
     public class ConfigPageViewModel :BaseViewModel {
 
         public string EmailUsername { get; set; }
-        public string TMSServiceUsername { get; set; }
+        public string XServiceUsername { get; set; }
 
         #region Commands
         public ICommand SaveSettings { get; private set; }
@@ -26,7 +26,7 @@ namespace WPFSampleApplication.ViewModel {
         private IPagesNavigator _pagesNavigator;
         private bool _wereSettingsChanged;
         private bool _prevAutosaveSetting;
-        private (PasswordBox Email, PasswordBox TMSService)? _passBoxes;
+        private (PasswordBox Email, PasswordBox XService)? _passBoxes;
 
         
         public ConfigPageViewModel(ApplicationViewModel applicationViewModel, IPagesNavigator pagesNavigator) : base(applicationViewModel) {
@@ -41,7 +41,7 @@ namespace WPFSampleApplication.ViewModel {
                 AppViewModel.Settings.SaveToFiles();
                 if (_passBoxes != null) {
                     CredentialManager.WriteCreds(AppViewModel.Settings.Process.EmailCredName, EmailUsername, _passBoxes.Value.Email.SecurePassword);
-                    CredentialManager.WriteCreds(AppViewModel.Settings.Process.TMSServiceCredName, TMSServiceUsername, _passBoxes.Value.TMSService.SecurePassword);
+                    CredentialManager.WriteCreds(AppViewModel.Settings.Process.XServiceCredName, XServiceUsername, _passBoxes.Value.XService.SecurePassword);
                 }
                 _wereSettingsChanged = false;
                 AppViewModel.BackgroundProcessModel.UpdateProcessSettings();
@@ -73,7 +73,7 @@ namespace WPFSampleApplication.ViewModel {
                 //Try to get password boxes. Breaks MVVM, but you can't really bind passwordboxes
                 var cfgPage = e as ConfigPage;
                 if (_passBoxes == null && cfgPage != null) {
-                    _passBoxes = (cfgPage.EmailPassword, cfgPage.TMSServicePassword);
+                    _passBoxes = (cfgPage.EmailPassword, cfgPage.XServicePassword);
                 }
 
                 _wereSettingsChanged = false;
@@ -85,9 +85,9 @@ namespace WPFSampleApplication.ViewModel {
                     _passBoxes.Value.Email.Password = cred.password;
                     EmailUsername = cred.username;
 
-                    cred = CredentialManager.ReadCredsString(AppViewModel.Settings.Process.TMSServiceCredName);
-                    _passBoxes.Value.TMSService.Password = cred.password;
-                    TMSServiceUsername = cred.username;
+                    cred = CredentialManager.ReadCredsString(AppViewModel.Settings.Process.XServiceCredName);
+                    _passBoxes.Value.XService.Password = cred.password;
+                    XServiceUsername = cred.username;
                 }
             }
         }
@@ -98,8 +98,8 @@ namespace WPFSampleApplication.ViewModel {
                 if ((cred.username != EmailUsername) || (cred.password != _passBoxes.Value.Email.Password))
                     return true;
 
-                cred = CredentialManager.ReadCredsString(AppViewModel.Settings.Process.TMSServiceCredName);
-                if ((cred.username != TMSServiceUsername )|| (cred.password != _passBoxes.Value.TMSService.Password))
+                cred = CredentialManager.ReadCredsString(AppViewModel.Settings.Process.XServiceCredName);
+                if ((cred.username != XServiceUsername )|| (cred.password != _passBoxes.Value.XService.Password))
                     return true;
 
                 return false;

@@ -58,7 +58,7 @@ namespace WPFSampleApplication.Model {
             _bgProcessManager.Parameters = new ProcessParameters() {
                 Date = _settings.Process.ChosedDate,
                 EmailCredentials = _settings.Process.EmailCredName,
-                TMSServiceCredentials = _settings.Process.TMSServiceCredName
+                XServiceCredentials = _settings.Process.XServiceCredName
             };
             _bgProcessManager.ChangeInterval(_settings.Process.IntervalSec*1000);
         }

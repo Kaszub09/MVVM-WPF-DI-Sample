@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace BackgroundProcessSample {
     public struct ProcessParameters {
         public string EmailCredentials;
-        public string TMSServiceCredentials;
+        public string XServiceCredentials;
         public DateTime Date;
     }
 }
