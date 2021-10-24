@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--Menu definition-->
+    <!--Can't get this fucker to change styles dynamically, initializes with current style and stays the same. Also, it's one object shared across applciation?-->
+    <!--Fucking finally, if you directly overwrite contextmenumerged dicitonaries with those form app, it updates -->
+    <ContextMenu x:Key="TrayContextMenu" >
+
+        <!--Menu items-->
+        <MenuItem  Header="{Binding  AppViewModel.AppSubtitles[button_actions_process_start]}" Command="{Binding AppViewModel.StartProcess}" FontSize="{Binding  AppViewModel.Settings.WindowsUI.MenuAndStatusbarFontSize}"/>
+        <MenuItem  Header="{Binding  AppViewModel.AppSubtitles[button_actions_process_stop]}" Command="{Binding AppViewModel.StopProcess}" FontSize="{Binding  AppViewModel.Settings.WindowsUI.MenuAndStatusbarFontSize}"/>
+        <MenuItem  Header="{Binding  AppViewModel.AppSubtitles[button_restore_from_tray]}" Command="{Binding AppViewModel.RestoreAppFromTray}" FontSize="{Binding  AppViewModel.Settings.WindowsUI.MenuAndStatusbarFontSize}"/>
+        <MenuItem  Header="{Binding  AppViewModel.AppSubtitles[menu_button_exit]}" Command="{Binding AppViewModel.ExitApplication}" FontSize="{Binding  AppViewModel.Settings.WindowsUI.MenuAndStatusbarFontSize}"/>
+    </ContextMenu>
+</ResourceDictionary>

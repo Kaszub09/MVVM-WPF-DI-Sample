@@ -1,0 +1,105 @@
+﻿<Window x:Class="WPFSampleApplication.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:VM="clr-namespace:WPFSampleApplication.ViewModel"
+        xmlns:local="clr-namespace:WPFSampleApplication.View"
+        mc:Ignorable="d"
+        Title="{Binding  AppViewModel.AppSubtitles[app_name]}"  Height="500" Width="900" MinHeight="300" MinWidth="600" 
+        Style="{DynamicResource {x:Type Window}}" Icon="/WPFSampleApplication;component/Resources/trayIcon.ico">
+
+    <DockPanel x:Name="_dockPanel">
+        <!--TOP MENU-->
+        <Grid x:Name="_topMenuGrid" DockPanel.Dock="Top" >
+            <Menu >
+                <MenuItem  Header="{Binding  AppViewModel.AppSubtitles[top_menu_navigation]}" FontSize="{Binding  AppViewModel.Settings.WindowsUI.MenuAndStatusbarFontSize}" >
+                    <MenuItem Header="{Binding  AppViewModel.AppSubtitles[top_menu_go_forward]}" Command="{Binding NavigateForward}" FontSize="{Binding  AppViewModel.Settings.WindowsUI.MenuAndStatusbarFontSize}"/>
+                    <MenuItem  Header="{Binding  AppViewModel.AppSubtitles[top_menu_go_back]}" Command="{Binding NavigateBack}" FontSize="{Binding  AppViewModel.Settings.WindowsUI.MenuAndStatusbarFontSize}" />
+                </MenuItem>
+                <MenuItem   ItemsSource="{Binding AppViewModel.AllLanguagesItems}" Header="{Binding  AppViewModel.AppSubtitles[top_menu_language]}" FontSize="{Binding  AppViewModel.Settings.WindowsUI.MenuAndStatusbarFontSize}">
+                    <MenuItem.ItemContainerStyle>
+                        <Style   TargetType="{x:Type MenuItem}" >
+                            <Setter Property="Header" Value="{Binding DisplayName}"/>
+                            <Setter Property="Command" Value="{Binding ChangeLanguage}"/>
+                            <Setter Property="FontSize" Value="{Binding  RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext. AppViewModel.Settings.WindowsUI.MenuAndStatusbarFontSize}" />
+                        </Style>
+                    </MenuItem.ItemContainerStyle>
+                </MenuItem>
+                <MenuItem    ItemsSource="{Binding AppViewModel.AllThemesItems}" Header="{Binding  AppViewModel.AppSubtitles[top_menu_themes]}" FontSize="{Binding  AppViewModel.Settings.WindowsUI.MenuAndStatusbarFontSize}">
+                    <MenuItem.ItemContainerStyle>
+                        <Style   TargetType="{x:Type MenuItem}" >
+                            <Setter Property="Header" Value="{Binding DisplayName}"/>
+                            <Setter Property="Command" Value="{Binding ChangeTheme}"/>
+                            <Setter Property="FontSize" Value="{Binding  RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext. AppViewModel.Settings.WindowsUI.MenuAndStatusbarFontSize}" />
+
+                        </Style>
+                    </MenuItem.ItemContainerStyle>
+                </MenuItem>
+                <MenuItem    Header="{Binding  AppViewModel.AppSubtitles[top_menu_reload]}" FontSize="{Binding  AppViewModel.Settings.WindowsUI.MenuAndStatusbarFontSize}">
+                    <MenuItem Header="{Binding  AppViewModel.AppSubtitles[top_menu_reload_languages]}" Command="{Binding RefreshLanguages}" FontSize="{Binding  AppViewModel.Settings.WindowsUI.MenuAndStatusbarFontSize}" />
+                    <MenuItem Header="{Binding  AppViewModel.AppSubtitles[top_menu_reload_themes]}" Command="{Binding RefreshThemes}" FontSize="{Binding  AppViewModel.Settings.WindowsUI.MenuAndStatusbarFontSize}"/>
+                </MenuItem>
+            </Menu>
+        </Grid>
+        <Border DockPanel.Dock="Top"  BorderThickness="0,1,0,0" MinHeight="1"  />
+
+        <!--  STATUS BAR -->
+        <StatusBar DockPanel.Dock="Bottom" HorizontalContentAlignment="Center">
+            <StatusBar.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </StatusBar.ItemsPanel>
+            <StatusBarItem HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                <TextBlock x:Name="_statusLeftText" Text="{Binding LeftStatusBar}" FontSize="{Binding  AppViewModel.Settings.WindowsUI.MenuAndStatusbarFontSize}" />
+            </StatusBarItem>
+            <Separator Grid.Column="1" />
+            <StatusBarItem Grid.Column="2" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                <TextBlock x:Name="_statusMiddleText" Text="{Binding MiddleStatusBar}" FontSize="{Binding  AppViewModel.Settings.WindowsUI.MenuAndStatusbarFontSize}"/>
+            </StatusBarItem>
+            <Separator Grid.Column="3"  HorizontalAlignment="Right" />
+            <StatusBarItem Grid.Column="4" Width="200" HorizontalAlignment="Right" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                <ProgressBar x:Name="_statusProgressbar" Value="{Binding ProgressBarValue}"  FontSize="{Binding  Settings.WindowsUI.MenuAndStatusbarFontSize}"/>
+            </StatusBarItem>
+        </StatusBar>
+        <Border DockPanel.Dock="Bottom"  BorderThickness="0,0,0,1" MinHeight="1"  />
+
+        <!--<Separator DockPanel.Dock="Bottom"  Height="1"/>-->
+        <Grid  DockPanel.Dock="Left" >
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="36"/>
+                <RowDefinition/>
+                <RowDefinition Height="36"/>
+                <RowDefinition/>
+                <RowDefinition Height="36"/>
+                <RowDefinition/>
+                <RowDefinition Height="36"/>
+                <RowDefinition/>
+                <RowDefinition Height="36"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="180"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            <Button   Content="{Binding  AppViewModel.AppSubtitles[menu_button_actions]}" Command="{Binding NavigateTo}"  CommandParameter="{x:Type local:ActionsPage}"  FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Grid.Row="1" Grid.Column="1"  />
+            <Button   Content="{Binding  AppViewModel.AppSubtitles[menu_button_configuration]}" Command="{Binding NavigateTo}"  CommandParameter="{x:Type local:ConfigPage}" FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Grid.Row="3" Grid.Column="1"  />
+            <Button   Content="{Binding  AppViewModel.AppSubtitles[menu_button_info]}" Command="{Binding NavigateTo}"  CommandParameter="{x:Type local:AboutPage}"  FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}"  Grid.Row="5" Grid.Column="1"   />
+            <Button  Content="{Binding  AppViewModel.AppSubtitles[menu_button_exit]}"  Grid.Row="7" Grid.Column="1"  Command="{Binding AppViewModel.ExitApplication}" FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}"  />
+        </Grid>
+        <Border DockPanel.Dock="Left" BorderThickness="2,0,0,0" MinWidth="2"   />
+
+        <Frame Name="_frame" Content="{Binding PagesNavigator.CurrentPage}" NavigationUIVisibility="Hidden" />
+    </DockPanel>
+</Window>

@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Languages>
+  <Language id="pol" name="Polski">
+    <text id="app_name">Nazwa aplikacji</text>
+    
+      <!--=== TOP MENU ===-->
+    <text id="top_menu_navigation">Nawigacja</text>
+    <text id="top_menu_go_back">Wróć</text>
+    <text id="top_menu_go_forward">Naprzód</text>
+    <text id="top_menu_language">Język</text>
+    <text id="top_menu_themes">Motywy</text>
+    <text id="top_menu_reload">Przeładuj</text>
+    <text id="top_menu_reload_languages">Przeładuj języki</text>
+    <text id="top_menu_reload_themes">Przeładuj motywy</text>
+
+   <!--=== LEFT MENU ===-->
+    <text id="menu_button_actions">Akcje</text>
+    <text id="menu_button_configuration">Konfiguracja</text>
+    <text id="menu_button_info">O programie</text>
+    <text id="menu_button_exit">Wyjdź</text>
+
+    <!--=== ACTIONS PAGE ===-->
+    <text id="button_actions_process_start">Rozpocznij proces</text>
+    <text id="button_actions_process_stop">Zatrzymaj proces</text>
+    <text id="button_actions_minimize">Minimalizuj</text>
+
+    <!--=== CONFIG PAGE ===-->
+    <text id="config_tab_process_settings">Ustawienia procesu</text>
+    <text id="config_label_email_user">Email - użytkownik</text>
+    <text id="config_label_email_password">Email - hasło</text>
+    <text id="config_label_qguar_user">Qguar - użytkownik</text>
+    <text id="config_label_qguar_password">Qguar - hasło</text>
+    <text id="config_label_interval_sec">Częstość uruchamiania (w sekundach)</text>
+    <text id="config_label_start_process_immediately">Uruchom proces natychmiastowo</text>
+    
+    <text id="config_tab_ui_settings">Ustawienia interfejsu</text>
+    <text id="config_label_language">Język</text>
+    <text id="config_label_theme">Motyw</text>
+    <text id="config_label_main_font_size">Rozmiar czcionki elementów aplikacji</text>
+    <text id="config_label_menu_font_size">Rozmiar czcionki menu i paska statusu</text>
+    <text id="config_label_show_notifications">Wyświetlaj notyfikacje</text>
+    <text id="config_label_update_taskbar_state">Aktualizuj ikonę na pasku zadań</text>
+
+    <text id="config_button_save">Zapisz ustawienia</text>
+    <text id="config_button_defult_settings">Przywróć domyślne ustawienia</text>
+    
+        <!--=== ABOUT PAGE ===-->
+    <text id="application_info">Ta aplikacja
+służy do
+odpalania procesów w tle</text>
+    <text id="author_info">Marcin Kaszuba 2021</text>
+    
+    <!--=== TRAY ===-->
+    <text id="button_restore_from_tray">Pokaż aplikację</text>
+    <text id="app_minimised_ballontip">Aplikacja została zminimalizowana</text>
+    <text id="tray_progress_info_header">Proces w tle</text>
+    
+    <!--=== MESSAGE BOX ===-->
+    <text id="msgbox_save_settings_text">Wykryto zmianę ustawień. Czy chcesz zapisać nowe ustawienia?</text>
+    <text id="msgbox_save_settings_caption">Czy zapisać ustawienia?</text>
+    <text id="msgbox_wrong_interval_text">Wprowadź dodatnią liczbę!</text>
+    <text id="msgbox_wrong_data_generic_caption">Wprowadzono błędne dane</text>
+
+    <!--=== STATUS BAR ===-->
+    <text id="left_status_bar_program_started">Program aktywny</text>
+    <text id="left_status_bar_program_start_error">Wystąpił błąd podczas uruchamiania programu</text>
+    <text id="left_status_bar_program_stopped">Program nieaktywny</text>
+    <text id="left_status_bar_program_stop_error">Wystąpił błąd podczas zatrzymywania programu</text>
+    <text id="left_status_bar_next_run_time">Następne uruchomienie programu za: {0:hh\:mm\:ss}</text>
+    <text id="left_status_bar_next_run_never">Następne uruchomienie programu za: ∞</text>
+    
+    <!--=== PROGRESS INFO ===-->
+    <text id="process_status_in_progress">Przerobiono pozycję {0} z {1}</text>
+    <text id="process_status_completed">Zakończono proces o {2:H:mm:ss}. Przerobione pozycje: {0} z {1}</text>
+    <text id="process_status_cancelled">Anulowano proces o {2:H:mm:ss}. Przerobione pozycje: {0} z {1}</text>
+    <text id="process_status_error">Proces zakończony błędem o {2:H:mm:ss}. Przerobiono: {0} z {1}. Błąd: {3}</text>
+
+
+
+    <!--=== THEMES ===
+        Resource Dictionary file shoud be added to all\themes\[here]
+        <text id="theme_[theme filename without .xaml]">[displayed name]</text>-->
+    <text id="theme_Default">Domyślny</text>
+    <text id="theme_Dark">Ciemny</text>
+    <text id="theme_DSIII">DS III</text>
+  </Language>
+  
+  
+  
+  <Language id="eng" name="English">
+    <text id="app_name">Application name</text>
+
+    <!--=== TOP MENU ===-->
+    <text id="top_menu_navigation">Navigation</text>
+    <text id="top_menu_go_back">Back</text>
+    <text id="top_menu_go_forward">Forward</text>
+    <text id="top_menu_language">Language</text>
+    <text id="top_menu_themes">Themes</text>
+    <text id="top_menu_reload">Reload</text>
+    <text id="top_menu_reload_languages">Reload languages</text>
+    <text id="top_menu_reload_themes">Reload themes</text>
+    
+    <!--=== LEFT MENU ===-->
+    <text id="menu_button_actions">Actions</text>
+    <text id="menu_button_configuration">Configuration</text>
+    <text id="menu_button_info">About program</text>
+    <text id="menu_button_exit">Exit</text>
+
+    <!--=== ACTIONS PAGE ===-->
+    <text id="button_actions_process_start">Start process</text>
+    <text id="button_actions_process_stop">Stop process</text>
+    <text id="button_actions_minimize">Minimize</text>
+
+    <!--=== CONFIG PAGE ===-->
+    <text id="config_tab_process_settings">Process settings</text>
+    <text id="config_label_email_user">Email - username</text>
+    <text id="config_label_email_password">Email - password</text>
+    <text id="config_label_qguar_user">Qguar - username</text>
+    <text id="config_label_qguar_password">Qguar - password</text>
+    <text id="config_label_interval_sec">Running interval (seconds)</text>
+    <text id="config_label_start_process_immediately">Run process immediately</text>
+
+    <text id="config_tab_ui_settings">Interface settings</text>
+    <text id="config_label_language">Language</text>
+    <text id="config_label_theme">Theme</text>
+    <text id="config_label_main_font_size">Application elements fontsize</text>
+    <text id="config_label_menu_font_size">Menu and statusbar fontsize</text>
+    <text id="config_label_show_notifications">Show notifications</text>
+    <text id="config_label_update_taskbar_state">Update taskbar info</text>
+    
+    <text id="config_button_save">Save settings</text>
+    <text id="config_button_defult_settings">Restore default settings</text>
+
+    <!--=== ABOUT PAGE ===-->
+    <text id="application_info">The Application
+runs background processes</text>
+    <text id="author_info">Marcin Kaszuba 2021</text>
+
+    <!--=== TRAY ===-->
+    <text id="button_restore_from_tray">Show applications</text>
+    <text id="app_minimised_ballontip">Application has been minimised</text>
+    <text id="tray_progress_info_header">Background process</text>
+    
+    <!--=== MESSAGE BOX ===-->
+    <text id="msgbox_save_settings_text">Settings change detected. Do you want to save new settings?</text>
+    <text id="msgbox_save_settings_caption">Save settings?</text>
+    <text id="msgbox_wrong_interval_text">Insert positive number!</text>
+    <text id="msgbox_wrong_data_generic_caption">Incorrect data</text>
+
+    <!--=== STATUS BAR ===-->
+    <text id="left_status_bar_program_started">Program active</text>
+    <text id="left_status_bar_program_start_error">Error occured when trying to start program</text>
+    <text id="left_status_bar_program_stopped">Program inactive</text>
+    <text id="left_status_bar_program_stop_error">Error occured when trying to stop program</text>
+    <text id="left_status_bar_next_run_time">Next program run in: {0:hh\:mm\:ss}</text>
+    <text id="left_status_bar_next_run_never">Next program run in: ∞</text>
+    <text id="middle_status_bar_proces_active_info">Processed item {0} of {1}</text>
+    <text id="middle_status_bar_proces_completed_info">Process finished at {0:H:mm:ss}. Processed items: {1} z {2}</text>
+
+    <!--=== PROGRESS INFO ===-->
+    <text id="process_status_in_progress">Processed item {0} of {1}</text>
+    <text id="process_status_completed">Process finished at {0:H:mm:ss}. Processed item {0} of {1}</text>
+    <text id="process_status_cancelled">Process cancelled at {0:H:mm:ss}. Processed item {0} of {1}</text>
+    <text id="process_status_error">Process finishewd with error at {0:H:mm:ss}.Processed item {0} of {1}. Error: {3}</text>
+
+    
+    <!--=== THEMES ===
+        Resource Dictionary file shoud be added to ApplicationData\Themes\[here]
+        <text id="theme_[theme filename without .xaml]">[displayed name]</text>-->
+    <text id="theme_Default">Default</text>
+    <text id="theme_Dark">Dark</text>
+    <text id="theme_DSIII">DS III</text>
+  </Language>
+</Languages>

@@ -1,0 +1,36 @@
+﻿<Page x:Class="WPFSampleApplication.View.ActionsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFSampleApplication.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ActionsPage" Style="{DynamicResource {x:Type Page}}">
+
+    <Grid x:Name="_actionsPageGrid" Grid.Column="1">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="*"/>
+            <RowDefinition/>
+            <RowDefinition Height="*"/>
+            <RowDefinition/>
+            <RowDefinition Height="*"/>
+            <RowDefinition/>
+            <RowDefinition Height="*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Button FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Content="{Binding  AppViewModel.AppSubtitles[button_actions_process_start]}" Command="{Binding AppViewModel.StartProcess}" Grid.Row="3" Grid.Column="1" />
+        <Button FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Content="{Binding  AppViewModel.AppSubtitles[button_actions_process_stop]}" Command="{Binding AppViewModel.StopProcess}" Grid.Row="3" Grid.Column="3"  />
+        <Button FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Content="{Binding  AppViewModel.AppSubtitles[button_actions_minimize]}" Command="{Binding AppViewModel.MinimizeAppToTray}" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3"  />
+    </Grid>
+
+ 
+</Page>

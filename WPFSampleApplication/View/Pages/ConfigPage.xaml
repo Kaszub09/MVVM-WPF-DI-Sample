@@ -1,0 +1,148 @@
+﻿<Page x:Class="WPFSampleApplication.View.ConfigPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WPFSampleApplication.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ConfigPage" Style="{DynamicResource {x:Type Page}}">
+
+    <Grid   >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="8*"/>
+            <RowDefinition />
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+
+        <TabControl  Margin="0,0,0,0" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="3"  >
+            <TabItem Header="{Binding  AppViewModel.AppSubtitles[config_tab_process_settings]}"  FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition />
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition />
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition />
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition />
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition />
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="12*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <!--<Label FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}"  Content="{Binding VMText[config_label_pick_date]}" Grid.Column="1" Grid.Row="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                    <DatePicker FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Name="ChosedDate" Grid.Column="3"   Grid.Row="0"  VerticalContentAlignment="Center"/>-->
+
+                    <Label FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Content="{Binding  AppViewModel.AppSubtitles[config_label_email_user]}" Grid.Column="1"  Grid.Row="1" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+                    <TextBox FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Name="_emailUsername" Text="{Binding EmailUsername,Mode=TwoWay}" Grid.Column="3"    Grid.Row="1" TextWrapping="NoWrap"  VerticalContentAlignment="Center"/>
+
+                    <Label FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}"  Content="{Binding  AppViewModel.AppSubtitles[config_label_email_password]}" Grid.Column="1"  Grid.Row="3" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+                    <PasswordBox FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Name="EmailPassword"  Grid.Column="3"    Grid.Row="3"  VerticalContentAlignment="Center" />
+
+                    <Label FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Content="{Binding  AppViewModel.AppSubtitles[config_label_qguar_user]}" Grid.Column="1"  Grid.Row="5" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+                    <TextBox FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Name="_qguarUsername" Text="{Binding QguarUsername,Mode=TwoWay}" Grid.Column="3"    Grid.Row="5" TextWrapping="NoWrap"  VerticalContentAlignment="Center"/>
+
+                    <Label FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}"  Content="{Binding  AppViewModel.AppSubtitles[config_label_qguar_password]}" Grid.Column="1"  Grid.Row="7" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+                    <PasswordBox FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Name="TMSServicePassword" Grid.Column="3"    Grid.Row="7"  VerticalContentAlignment="Center" />
+
+                    <Label  FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Content="{Binding  AppViewModel.AppSubtitles[config_label_interval_sec]}" Grid.Column="1" Grid.Row="9" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+                    <TextBox FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Text="{Binding  AppViewModel.Settings.Process.IntervalSec,Mode=TwoWay}" Grid.Column="3"    Grid.Row="9" TextWrapping="NoWrap"  VerticalContentAlignment="Center"/>
+
+                    <Label FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Content="{Binding  AppViewModel.AppSubtitles[config_label_start_process_immediately]}" Grid.Column="1" Grid.Row="11" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+                    <Viewbox Grid.Column="3" Grid.Row="11" Margin="4">
+                        <CheckBox IsChecked="{Binding  AppViewModel.Settings.Process.RunProcessImmediately}" />
+                    </Viewbox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="{Binding  AppViewModel.AppSubtitles[config_tab_ui_settings]}" FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition />
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition />
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition />
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition />
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition />
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="12*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}"  Content="{Binding  AppViewModel.AppSubtitles[config_label_language]}" Grid.Column="1"  Grid.Row="1" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+                    <ComboBox FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}"   ItemsSource="{Binding AppViewModel.AllLanguagesItems}"   SelectedValue="{Binding  AppViewModel.Settings.WindowsUI.LanguageID,Mode=TwoWay}" DisplayMemberPath="DisplayName" SelectedValuePath="ID"  Grid.Column="3"    Grid.Row="1"  VerticalContentAlignment="Center"  />
+
+                    <Label FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Content="{Binding  AppViewModel.AppSubtitles[config_label_theme]}" Grid.Column="1"  Grid.Row="3" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+                    <ComboBox  FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" ItemsSource="{Binding AppViewModel.AllThemesItems}"   SelectedValue="{Binding  AppViewModel.Settings.WindowsUI.ThemeID,Mode=TwoWay}"  DisplayMemberPath="DisplayName" SelectedValuePath="ID"     Grid.Column="3"    Grid.Row="3"  VerticalContentAlignment="Center" />
+
+                    <Label FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}"  Content="{Binding  AppViewModel.AppSubtitles[config_label_main_font_size]}" Grid.Column="1"  Grid.Row="5" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+                    <Grid Grid.Column="3"    Grid.Row="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Viewbox Grid.Column="0"   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="3">
+                            <Slider Width ="180" x:Name="_MainFontSize" FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Value="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize,Mode=TwoWay}" VerticalContentAlignment="Center" Minimum="8" Maximum="48" SmallChange="1" LargeChange="8"  AutoToolTipPlacement="BottomRight"  IsSnapToTickEnabled="True"/>
+                        </Viewbox>
+                        <TextBox FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Text="{Binding ElementName=_MainFontSize,Path=Value,Mode=TwoWay}" Grid.Column="1"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                    </Grid>
+
+                    <Label FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Content="{Binding  AppViewModel.AppSubtitles[config_label_menu_font_size]}" Grid.Column="1" Grid.Row="7" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+                    <Grid Grid.Column="3"    Grid.Row="7">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Viewbox Grid.Column="0"   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="3">
+                            <Slider Width ="180" x:Name="_MenuFontSize" FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Value="{Binding  AppViewModel.Settings.WindowsUI.MenuAndStatusbarFontSize,Mode=TwoWay}" VerticalContentAlignment="Center"  Minimum="8" Maximum="36" SmallChange="1" LargeChange="8"   AutoToolTipPlacement="BottomRight"  IsSnapToTickEnabled="True"/>
+                        </Viewbox>
+                        <TextBox FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Text="{Binding ElementName=_MenuFontSize,Path=Value,Mode=TwoWay}" Grid.Column="1"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
+                    </Grid>
+
+                    <Label FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Content="{Binding  AppViewModel.AppSubtitles[config_label_show_notifications]}" Grid.Column="1" Grid.Row="9" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+                    <Viewbox Grid.Column="3" Grid.Row="9"  Margin="6" >
+                        <CheckBox   IsChecked="{Binding  AppViewModel.Settings.WindowsUI.ShowNotifications}" />
+                    </Viewbox>
+                    <Label FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Content="{Binding  AppViewModel.AppSubtitles[config_label_update_taskbar_state]}" Grid.Column="1" Grid.Row="11" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" />
+                    <Viewbox Grid.Column="3" Grid.Row="11"  Margin="6" >
+                        <CheckBox   IsChecked="{Binding  AppViewModel.Settings.WindowsUI.UpdateTaskbarIcon}" />
+                    </Viewbox>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+        <Button  FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Content="{Binding  AppViewModel.AppSubtitles[config_button_save]}"  Command="{Binding SaveSettings}"  Grid.Column="1"  Grid.Row="3"    />
+        <Button FontSize="{Binding  AppViewModel.Settings.WindowsUI.MainFontSize}" Content="{Binding  AppViewModel.AppSubtitles[config_button_defult_settings]}" Command="{Binding ResetSettingsToDefault}"   Grid.Column="3"  Grid.Row="3"    />
+
+    </Grid>
+
+</Page>

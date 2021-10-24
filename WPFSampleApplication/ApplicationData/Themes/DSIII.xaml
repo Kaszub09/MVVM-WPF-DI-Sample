@@ -1,0 +1,722 @@
+﻿<!-- DS3 like  Skin -->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:View="clr-namespace:WindowsUI.View">
+    <!--Control colors-->
+    <!--
+    <Color x:Key="PrimaryTextColor">#FFF9F9F9</Color>
+    <Color x:Key="PrimaryLightColor">#CCB46228</Color>
+    <Color x:Key="SecondaryLightColor">#00B46228</Color>
+    <Color x:Key="BorderColor">#ee6b5d3a</Color>
+    <Color x:Key="PrimaryDarkBackgroundColor">#000000</Color>
+    <Color x:Key="SecondaryDarkBackgroundColor">#030305</Color>
+    <Color x:Key="Transparent">#00000000</Color>
+
+
+    -->
+    <!--Color brushes.-->
+    <!--
+    <SolidColorBrush  x:Key="PrimaryTextBrush" Color="{StaticResource PrimaryTextColor}"/>
+    <SolidColorBrush  x:Key="PrimaryLightBrush" Color="{StaticResource PrimaryLightColor}"/>
+    <SolidColorBrush  x:Key="SecondaryLightBrush" Color="{StaticResource SecondaryLightColor}"/>
+    <SolidColorBrush  x:Key="PrimaryDarkBackgroundBrush" Color="{StaticResource PrimaryDarkBackgroundColor}"/>
+    <SolidColorBrush  x:Key="SecondaryDarkBackgroundBrush" Color="{StaticResource SecondaryDarkBackgroundColor}"/>
+    <SolidColorBrush  x:Key="TransparentBrush" Color="{StaticResource Transparent}"/>
+    <SolidColorBrush  x:Key="BorderBrush" Color="{StaticResource BorderBrush}"/>-->
+
+    <FontFamily x:Key="DS3Font">OptimusPrinceps</FontFamily>
+
+    <!--Control colors-->
+    <Color x:Key="DS3HoverColor">#CCB46228</Color>
+    <Color x:Key="DS3HoverColor2">#00B46228</Color>
+    <Color x:Key="DS3TextColor">#FFF9F9F9</Color>
+    <Color x:Key="DS3DisabledTextColor">#FF888888</Color>
+    <Color x:Key="DS3BackgroundPureBlack">#000000</Color>
+    <Color x:Key="DS3BackgroundLigtherBlack">#080810</Color>
+
+    <!--Color brushes.-->
+    <SolidColorBrush x:Key="DS3HoverBrush" Color="{StaticResource DS3HoverColor}"/>
+    <SolidColorBrush x:Key="DS3BorderBrush" Color="#ee6b5d3a"/>
+    <SolidColorBrush x:Key="DS3DarkedBorderBrush" Color="#453d25"/>
+    <SolidColorBrush x:Key="DS3TextBrush" Color="{StaticResource DS3TextColor}"/>
+    <SolidColorBrush x:Key="DS3DisabledTextBrush" Color="{StaticResource DS3DisabledTextColor}"/>
+    <SolidColorBrush x:Key="DS3BackgroundPureBlackBrush" Color="{StaticResource DS3BackgroundPureBlack}"/>
+    <SolidColorBrush x:Key="DS3BackgroundLigtherBlackBrush" Color="{StaticResource DS3BackgroundLigtherBlack}"/>
+    <SolidColorBrush x:Key="DS3TransparentBrush" Color="Transparent"/>
+    <LinearGradientBrush x:Key="DS3HoverButtonPart1" EndPoint="0,1" MappingMode="RelativeToBoundingBox" StartPoint="0,0" >
+        <GradientStop Color="{StaticResource DS3HoverColor}"/>
+        <GradientStop Color="{StaticResource DS3HoverColor2}" Offset="0.35"/>
+        <GradientStop Color="{StaticResource DS3HoverColor2}" Offset="0.65"/>
+        <GradientStop Color="{StaticResource DS3HoverColor}" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="DS3HoverButtonPart2" EndPoint="1,0" MappingMode="RelativeToBoundingBox" StartPoint="0,0">
+        <GradientStop Color="{StaticResource DS3HoverColor}"/>
+        <GradientStop Color="{StaticResource DS3HoverColor}" Offset="1"/>
+        <GradientStop Color="{StaticResource DS3HoverColor2}" Offset="0.8"/>
+        <GradientStop Color="{StaticResource DS3HoverColor2}" Offset="0.2"/>
+    </LinearGradientBrush>
+
+    <VisualBrush x:Key="hoverButtonBrush">
+        <VisualBrush.Visual>
+            <Border Background="{StaticResource DS3HoverButtonPart1}">
+                <Rectangle Fill="{StaticResource DS3HoverButtonPart2}" Width="1" Height="1" />
+            </Border>
+        </VisualBrush.Visual>
+    </VisualBrush>
+
+    <LinearGradientBrush x:Key="labelBottomBrush"  EndPoint="0,1" MappingMode="RelativeToBoundingBox" StartPoint="1,1">
+        <GradientStop Color="#00000000" Offset="0"/>
+        <GradientStop Color="{StaticResource DS3TextColor}"  Offset="0.2"/>
+        <GradientStop Color="{StaticResource DS3TextColor}" Offset="0.8"/>
+        <GradientStop Color="#00000000" Offset="1"/>
+    </LinearGradientBrush>
+
+    <RadialGradientBrush x:Key="labelBrush" GradientOrigin="0.7,1" Center="0.5,1" RadiusX="0.7" RadiusY="1" Opacity="1">
+        <GradientStop Color="{StaticResource DS3HoverColor}" Offset="0.20"/>
+        <GradientStop Color="{StaticResource DS3HoverColor2}" Offset="0.85"/>
+    </RadialGradientBrush>
+    <RadialGradientBrush x:Key="textBoxBrush" GradientOrigin="0.7,1" Center="0.5,1" RadiusX="0.7" RadiusY="1" Opacity="0">
+        <GradientStop Color="{StaticResource DS3HoverColor}" Offset="0.20"/>
+        <GradientStop Color="{StaticResource DS3HoverColor2}" Offset="0.85"/>
+    </RadialGradientBrush>
+
+
+    <!-- BUTTON -->
+    <Style  TargetType="Button">
+        <Style.Resources>
+            <Storyboard x:Key="animationFading" AutoReverse="True" RepeatBehavior="Forever">
+                <DoubleAnimation Storyboard.TargetName="rectangle1"   
+                                                             Storyboard.TargetProperty="Opacity"  
+                                             By="1" Duration="0:0:1" BeginTime="0:0:0"/>
+            </Storyboard>
+            <Storyboard x:Key="animationStop">
+                <DoubleAnimation Storyboard.TargetName="rectangle1"   
+                                                             Storyboard.TargetProperty="Opacity"  
+                                             From="0" To="0" Duration="0:0:1"/>
+            </Storyboard>
+        </Style.Resources>
+        <Setter Property="Foreground" Value="{StaticResource DS3TextBrush}"/>
+        <Setter Property="FontFamily" Value="{StaticResource DS3Font}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid x:Name="grid" >
+                        <Border x:Name="outerBorder" CornerRadius="0" BorderBrush="{StaticResource DS3BorderBrush}" BorderThickness="1" Padding = "2">
+                            <Grid x:Name="grid2" >
+                                <Border x:Name="border" CornerRadius="0" BorderBrush="{StaticResource DS3BorderBrush}" BorderThickness="1">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </Grid>
+                        </Border>
+                        <Rectangle x:Name="rectangle1" Fill="{DynamicResource hoverButtonBrush}" Opacity="0"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Padding" TargetName="border" Value="2,1,0,0"/>
+                            <Setter Property="Background" TargetName="outerBorder" Value="{StaticResource hoverButtonBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Name="IsMouseOverTrueBeginStoryboard" Storyboard="{StaticResource animationFading}" />
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard Name="IsMouseOverFalseBeginStoryboard" Storyboard="{StaticResource animationStop}" />
+                            </Trigger.ExitActions>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="{StaticResource DS3BorderBrush}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- LABEL -->
+    <Style  TargetType="Label">
+        <Setter Property="Foreground" Value="{StaticResource DS3TextBrush}"/>
+        <Setter Property="FontFamily" Value="{StaticResource DS3Font}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource DS3BorderBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Label}">
+                    <Grid x:Name="grid2" >
+                        <Border x:Name="border" CornerRadius="0" BorderBrush="{StaticResource labelBottomBrush}" BorderThickness="0,0,0,1">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Bottom" />
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource labelBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- BORDER -->
+    <Style  TargetType="Border">
+        <Setter Property="BorderBrush" Value="{StaticResource DS3BorderBrush}"/>
+    </Style>
+    <!-- SEPARATOR -->
+    <Style  TargetType="Separator">
+        <Setter Property="BorderBrush" Value="{StaticResource DS3BorderBrush}"/>
+    </Style>
+
+    <!-- TEXTBOX -->
+    <Style  TargetType="TextBox">
+        <Setter Property="Foreground" Value="{StaticResource DS3TextBrush}"/>
+        <Setter Property="FontFamily" Value="{StaticResource DS3Font}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource labelBottomBrush}"/>
+        <Setter Property="BorderThickness" Value="0,0,0,1"/>
+        <Setter Property="Background" Value="#00000000"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Style.Triggers>
+            <Trigger Property="IsFocused" Value="True">
+                <Setter Property="Background"  Value="#321"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- PASSWORDBOX -->
+    <Style  TargetType="{x:Type PasswordBox}">
+        <Setter Property="Foreground" Value="{StaticResource DS3TextBrush}"/>
+        <Setter Property="FontFamily" Value="{StaticResource DS3Font}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource labelBottomBrush}"/>
+        <Setter Property="BorderThickness" Value="0,0,0,1"/>
+        <Setter Property="Background" Value="#00000000"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Style.Triggers>
+            <Trigger Property="IsFocused" Value="True">
+                <Setter Property="Background"  Value="#321"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- DATEPICKER -->
+    <Style  TargetType="{x:Type DatePicker}">
+        <Setter Property="Foreground" Value="{StaticResource DS3TextBrush}"/>
+        <Setter Property="FontFamily" Value="{StaticResource DS3Font}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource labelBottomBrush}"/>
+        <Setter Property="BorderThickness" Value="0,0,0,1"/>
+        <Setter Property="Background" Value="#00000000"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Bottom"/>
+    </Style>
+    <Style TargetType="{x:Type DatePickerTextBox}" >
+        <Setter Property="Background" Value="#00000000" />
+        <Setter Property="VerticalContentAlignment" Value="Bottom"/>
+        <Style.Triggers>
+            <Trigger Property="IsFocused" Value="True">
+                <Setter Property="Background"  Value="#321"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <!-- RADIO BUTTON -->
+    <Style TargetType="{x:Type RadioButton}">
+        <Setter Property="Foreground" Value="{StaticResource DS3TextBrush}"/>
+        <Setter Property="FontFamily" Value="{StaticResource DS3Font}"/>
+        <Setter Property="BorderThickness" Value="0,0,0,1"/>
+        <Setter Property="Background" Value="#CCB46228"/>
+        <Setter Property="VerticalContentAlignment" Value="Bottom"/>
+    </Style>
+
+    <!-- PAGE WINDOW-->
+    <Style TargetType="{x:Type Page}">
+        <Setter Property="Background" Value="{StaticResource DS3BackgroundLigtherBlackBrush}"/>
+    </Style>
+    <Style  TargetType="{x:Type Window}">
+        <Setter Property="Background" Value="{StaticResource DS3BackgroundPureBlackBrush}"/>
+    </Style>
+
+    <!-- MENU -->
+    <Style TargetType="{x:Type Menu}">
+        <Setter Property="Foreground" Value="{StaticResource DS3TextBrush}"/>
+        <Setter Property="Background" Value="{StaticResource DS3BackgroundLigtherBlackBrush}"/>
+        <Setter Property="FontFamily" Value="{StaticResource DS3Font}"/>
+    </Style>
+    <Style TargetType="{x:Type MenuItem}">
+        <Style.Resources>
+            <Storyboard x:Key="animationFading" AutoReverse="True" RepeatBehavior="Forever">
+                <DoubleAnimation Storyboard.TargetName="rectangle1"   
+                                                             Storyboard.TargetProperty="Opacity"  
+                                             By="1" Duration="0:0:1" BeginTime="0:0:0"/>
+            </Storyboard>
+            <Storyboard x:Key="animationStop">
+                <DoubleAnimation Storyboard.TargetName="rectangle1"   
+                                                             Storyboard.TargetProperty="Opacity"  
+                                             From="0" To="0" Duration="0:0:1"/>
+            </Storyboard>
+        </Style.Resources>
+        <Setter Property="FontFamily" Value="{StaticResource DS3Font}"/>
+        <Setter Property="Foreground" Value="{StaticResource DS3TextBrush}"/>
+        <Setter Property="Background" Value="{StaticResource DS3BackgroundPureBlackBrush}"/>
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type MenuItem}">
+                    <Border x:Name="Border"
+                        Background="{StaticResource DS3BackgroundPureBlackBrush}"
+                        BorderBrush="{StaticResource DS3BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid x:Name="Gridd" Background="{StaticResource DS3BackgroundPureBlackBrush}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition x:Name="Col0" MinWidth="17" Width="Auto" SharedSizeGroup="MenuItemIconColumnGroup"/>
+                                <ColumnDefinition Width="Auto" SharedSizeGroup="MenuTextColumnGroup"/>
+                                <ColumnDefinition Width="Auto" SharedSizeGroup="MenuItemIGTColumnGroup"/>
+                                <ColumnDefinition x:Name="Col3" Width="14"/>
+                            </Grid.ColumnDefinitions>
+                            <ContentPresenter Grid.Column="0" Margin="4,0,6,0" x:Name="Icon" VerticalAlignment="Center" ContentSource="Icon"/>
+                            <Grid Grid.Column="0" Visibility="Hidden" Margin="4,0,6,0" x:Name="GlyphPanel" VerticalAlignment="Center">
+                                <Path x:Name="GlyphPanelpath" VerticalAlignment="Center" Fill="{TemplateBinding Foreground}" Data="M0,2 L0,4.8 L2.5,7.4 L7.1,2.8 L7.1,0 L2.5,4.6 z" FlowDirection="LeftToRight"/>
+                            </Grid>
+                            <ContentPresenter Grid.Column="1" Margin="{TemplateBinding Padding}" x:Name="HeaderHost" RecognizesAccessKey="True" ContentSource="Header"/>
+                            <ContentPresenter Grid.Column="2" Margin="8,1,8,1" x:Name="IGTHost" ContentSource="InputGestureText" VerticalAlignment="Center"/>
+                            <Grid Grid.Column="3" Margin="4,0,6,0" x:Name="ArrowPanel" VerticalAlignment="Center">
+                                <Path x:Name="ArrowPanelPath" HorizontalAlignment="Right" VerticalAlignment="Center" Fill="{TemplateBinding Foreground}" Data="M0,0 L0,8 L4,4 z"/>
+                            </Grid>
+                            <Popup IsOpen="{Binding Path=IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}" Placement="Right" x:Name="SubMenuPopup" Focusable="false" PopupAnimation="{DynamicResource {x:Static SystemParameters.MenuPopupAnimationKey}}">
+                                <Border x:Name="SubMenuBorder" BorderBrush="{StaticResource DS3BorderBrush}" BorderThickness="1" Padding="2,2,2,2">
+                                    <Grid x:Name="SubMenu" Grid.IsSharedSizeScope="True">
+                                        <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Cycle"/>
+                                    </Grid>
+                                </Border>
+                            </Popup>
+                            <!--<Rectangle x:Name="rectangle1" Fill="{DynamicResource hoverButtonBrush}" Opacity="0"/>-->
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <!--Role = TopLevelHeader : this is the root menu item in a menu; the Popup expands down-->
+                        <Trigger Property="Role" Value="TopLevelHeader">
+                            <Setter Property="Padding" Value="6,1,6,1"/>
+                            <Setter Property="Placement" Value="Bottom" TargetName="SubMenuPopup"/>
+                            <Setter Property="MinWidth" Value="0" TargetName="Col0"/>
+                            <Setter Property="Width" Value="Auto" TargetName="Col3"/>
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="Icon"/>
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="GlyphPanel"/>
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="IGTHost"/>
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="ArrowPanel"/>
+                            <Setter Property="Background" Value="{StaticResource DS3BackgroundLigtherBlackBrush}" TargetName="Border"/>
+                        </Trigger>
+                        <!--Role = TopLevelItem :  this is a child menu item from the top level without any child items-->
+                        <Trigger Property="Role" Value="TopLevelItem">
+                            <Setter Property="Padding" Value="6,1,6,1"/>
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="ArrowPanel"/>
+                        </Trigger>
+                        <!--Role = SubMenuHeader : this is a child menu item which does not have children-->
+                        <Trigger Property="Role" Value="SubmenuHeader">
+                            <Setter Property="DockPanel.Dock" Value="Top"/>
+                            <Setter Property="Padding" Value="0,2,0,2"/>
+                        </Trigger>
+                        <!--Role = SubMenuItem : this is a child menu item which has children-->
+                        <Trigger Property="Role" Value="SubmenuItem">
+                            <Setter Property="DockPanel.Dock" Value="Top"/>
+                            <Setter Property="Padding" Value="0,2,0,2"/>
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="ArrowPanel"/>
+                        </Trigger>
+                        <Trigger Property="IsSuspendingPopupAnimation" Value="true">
+                            <Setter Property="PopupAnimation" Value="None" TargetName="SubMenuPopup"/>
+                        </Trigger>
+                        <!--If no Icon is present the we collapse the Icon Content-->
+                        <Trigger Property="Icon" Value="{x:Null}">
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="Icon"/>
+                        </Trigger>
+                        <!--The GlyphPanel contains the CheckMark-->
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter Property="Visibility" Value="Visible" TargetName="GlyphPanel"/>
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="Icon"/>
+                        </Trigger>
+                        <!--Background="{StaticResource PrimaryLightBrush}"-->
+                        <Trigger Property="IsHighlighted" Value="true">
+                            <Setter Property="Background" Value="{DynamicResource hoverButtonBrush}" TargetName="Gridd"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="{StaticResource DS3BorderBrush}" />
+                        </Trigger>
+                        <!--<Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Name="IsMouseOverTrueBeginStoryboard" Storyboard="{StaticResource animationFading}" />
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard Name="IsMouseOverFalseBeginStoryboard" Storyboard="{StaticResource animationStop}" />
+                            </Trigger.ExitActions>
+                        </Trigger>-->
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type ContextMenu}">
+        <Setter Property="BorderBrush" Value="{StaticResource DS3BorderBrush}"/>
+        <Setter Property="Foreground" Value="{StaticResource DS3TextBrush}"/>
+        <Setter Property="Background" Value="{StaticResource DS3BackgroundPureBlackBrush}"/>
+        <Setter Property="Padding" Value="1"/>
+    </Style>
+    <!-- DynamicMenuItem --><!--
+    <Style  TargetType="{x:Type View:DynamicMenuItem}">
+        <Setter Property="Foreground" Value="{StaticResource DS3TextBrush}"/>
+        <Setter Property="FontFamily" Value="{StaticResource DS3Font}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource DS3BorderBrush}"/>
+    </Style>-->
+
+    <!-- STATUS BAR -->
+    <Style x:Key="{x:Type StatusBar}" TargetType="{x:Type StatusBar}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type StatusBar}">
+                    <Border Padding="1">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <LinearGradientBrush.GradientStops>
+                                    <GradientStopCollection>
+                                        <GradientStop Color="{StaticResource DS3BackgroundLigtherBlack}" Offset="0.0" />
+                                        <GradientStop Color="{StaticResource DS3BackgroundPureBlack}" Offset="0.15" />
+                                    </GradientStopCollection>
+                                </LinearGradientBrush.GradientStops>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <ItemsPresenter />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type StatusBarItem}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Foreground" Value="{StaticResource DS3TextBrush}"/>
+        <Setter Property="VerticalContentAlignment" Value="Bottom"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type StatusBarItem}">
+                    <ContentPresenter Margin="1" Name="ContentSite" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--PROGRESS BAR RAINBOW-->
+    <Style TargetType="{x:Type ProgressBar}">
+        <Setter Property="Foreground" Value="{StaticResource DS3HoverBrush}" />
+        <Setter Property="BorderBrush" Value="{StaticResource DS3BorderBrush}" />
+    </Style>
+
+    <!--TABS-->
+    <Style TargetType="{x:Type TabControl}">
+        <Setter Property="BorderBrush" Value="{StaticResource DS3BorderBrush}" />
+        <Setter Property="Background" Value="{StaticResource DS3BackgroundLigtherBlackBrush}"/>
+    </Style>
+    <Style TargetType="{x:Type TabItem}">
+        <Setter Property="Foreground" Value="{StaticResource DS3TextBrush}"/>
+        <Setter Property="FontFamily" Value="{StaticResource DS3Font}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource DS3BorderBrush}" />
+        <Setter Property="Background" Value="{StaticResource DS3BackgroundPureBlackBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TabItem}" >
+                    <Border x:Name="outerBorder" Background="{TemplateBinding Background}" CornerRadius="0" BorderBrush="{StaticResource DS3BorderBrush}" BorderThickness="1,1,1,0" Padding = "4,2,4,0">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" ContentSource="Header"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background"  Value="{StaticResource DS3DarkedBorderBrush}"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background"  Value="{StaticResource DS3DarkedBorderBrush}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--COMBOBOX!-->
+    <ControlTemplate x:Key="ComboBoxToggleButton" TargetType="{x:Type ToggleButton}">
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Border x:Name="Border" CornerRadius="0" Grid.ColumnSpan="2" BorderBrush="{StaticResource DS3DarkedBorderBrush}" BorderThickness="1" />
+            <Border  Grid.Column="0" CornerRadius="0" Margin="1"  Background="{StaticResource DS3BackgroundPureBlackBrush}" BorderBrush="{StaticResource DS3DarkedBorderBrush}" BorderThickness="0,0,1,0" />
+            <Path  x:Name="Arrow"   Grid.Column="1" StrokeThickness="2"   Fill="{StaticResource DS3HoverBrush}"   HorizontalAlignment="Center"  
+                   VerticalAlignment="Center" Data="M0,0 L0,2 L4,6 L8,2 L8,0 L4,4 z"  />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="ToggleButton.IsMouseOver" Value="true">
+                <Setter TargetName="Border" Property="Background" Value="{StaticResource DS3DarkedBorderBrush}" />
+            </Trigger>
+            <Trigger Property="ToggleButton.IsChecked" Value="true">
+                <Setter TargetName="Border" Property="Background" Value="{StaticResource DS3DarkedBorderBrush}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="Arrow" Property="Fill" Value="{StaticResource DS3DarkedBorderBrush}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="ComboBoxTextBox" TargetType="{x:Type TextBox}">
+        <Border x:Name="PART_ContentHost" Focusable="False" Background="{TemplateBinding Background}" />
+    </ControlTemplate>
+
+    <Style  TargetType="{x:Type ComboBox}">
+        <Setter Property="SnapsToDevicePixels" Value="true"/>
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+        <Setter Property="MinWidth" Value="120"/>
+        <Setter Property="MinHeight" Value="20"/>
+        <Setter Property="Foreground" Value="{StaticResource DS3TextBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ComboBox}">
+                    <Grid>
+                        <ToggleButton 
+                            Name="ToggleButton" 
+                            Template="{StaticResource ComboBoxToggleButton}" 
+                            Grid.Column="2" 
+                            Focusable="false"
+                            IsChecked="{Binding Path=IsDropDownOpen,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}"
+                            ClickMode="Press">
+                        </ToggleButton>
+                        <ContentPresenter Name="ContentSite" IsHitTestVisible="False"  Content="{TemplateBinding SelectionBoxItem}"
+                            ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                            ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}"
+                            Margin="3,3,23,3"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Left" />
+                        <TextBox x:Name="PART_EditableTextBox"
+                            Style="{x:Null}" 
+                            Template="{StaticResource ComboBoxTextBox}" 
+                            HorizontalAlignment="Left" 
+                            VerticalAlignment="Center" 
+                            Margin="3,3,23,3"
+                            Focusable="True" 
+                            Background="{StaticResource DS3BackgroundLigtherBlackBrush}" 
+                            Foreground="{StaticResource DS3TextBrush}"
+                            Visibility="Hidden"
+                            IsReadOnly="{TemplateBinding IsReadOnly}"/>
+                        <Popup 
+                            Name="Popup"
+                            Placement="Bottom"
+                            IsOpen="{TemplateBinding IsDropDownOpen}"
+                            AllowsTransparency="True" 
+                            Focusable="False"
+                            PopupAnimation="Slide">
+
+                            <Grid Name="DropDown"
+                              SnapsToDevicePixels="True"                
+                              MinWidth="{TemplateBinding ActualWidth}"
+                              MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                <Border 
+                                x:Name="DropDownBorder"
+                                Background="{StaticResource DS3BackgroundPureBlackBrush}" 
+
+                                BorderThickness="1"
+                                BorderBrush="{StaticResource DS3DarkedBorderBrush}" />
+                                <ScrollViewer Margin="4,6,4,6" SnapsToDevicePixels="True">
+                                    <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained" />
+                                </ScrollViewer>
+                            </Grid>
+                        </Popup>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="HasItems" Value="false">
+                            <Setter TargetName="DropDownBorder" Property="MinHeight" Value="95"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground"  Value="{StaticResource DS3BorderBrush}" />
+                        </Trigger>
+                        <Trigger Property="IsGrouping" Value="true">
+                            <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+                        </Trigger>
+                        <Trigger SourceName="Popup" Property="Popup.AllowsTransparency" Value="true">
+                            <Setter TargetName="DropDownBorder" Property="CornerRadius" Value="0"/>
+                            <Setter TargetName="DropDownBorder" Property="Margin" Value="0,2,0,0"/>
+                        </Trigger>
+                        <Trigger Property="IsEditable"  Value="true">
+                            <Setter Property="IsTabStop" Value="false"/>
+                            <Setter TargetName="PART_EditableTextBox" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="ContentSite" Property="Visibility" Value="Hidden"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+        </Style.Triggers>
+    </Style>
+
+    <!--  ComboBoxItem -->
+    <Style  TargetType="{x:Type ComboBoxItem}">
+        <Setter Property="SnapsToDevicePixels" Value="true"/>
+        <Setter Property="Foreground" Value="{StaticResource DS3TextBrush}"/>
+        <Setter Property="OverridesDefaultStyle" Value="true"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ComboBoxItem}">
+                    <Border Name="Border"
+                              Padding="2"
+                              SnapsToDevicePixels="true">
+                        <ContentPresenter />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsHighlighted" Value="true">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource hoverButtonBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="{StaticResource DS3BorderBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--  SLIDER!!! -->
+    <Style x:Key="SliderRepeatButton" TargetType="RepeatButton">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="IsTabStop" Value="false" />
+        <Setter Property="Focusable" Value="false" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RepeatButton">
+                    <Border  BorderThickness="1" BorderBrush="{StaticResource DS3DarkedBorderBrush}" Background="{StaticResource DS3DarkedBorderBrush}"  Height="7"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SliderRepeatButton1" TargetType="RepeatButton">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="RepeatButton">
+                    <Border SnapsToDevicePixels="True" Background="{StaticResource DS3HoverBrush}"  BorderThickness="1" BorderBrush="{StaticResource DS3DarkedBorderBrush}" Height="7"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SliderThumb" TargetType="Thumb">
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Thumb">
+                    <Border BorderBrush="{StaticResource DS3BorderBrush}" BorderThickness="1" Background="{StaticResource DS3BorderBrush}" >
+                        <Rectangle Name="sliderThumb"  Height="24" Width="8" Fill="{StaticResource DS3BorderBrush}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="sliderThumb" Property="Fill" Value="{StaticResource DS3HoverBrush}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <ControlTemplate x:Key="Slider"  TargetType="Slider">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" MinHeight="{TemplateBinding MinHeight}" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Track Grid.Row="1" x:Name="PART_Track"   >
+                <Track.DecreaseRepeatButton>
+                    <RepeatButton Style="{StaticResource SliderRepeatButton1}"  Command="Slider.DecreaseLarge" />
+                </Track.DecreaseRepeatButton>
+                <Track.Thumb>
+                    <Thumb Style="{StaticResource SliderThumb}"  />
+                </Track.Thumb>
+                <Track.IncreaseRepeatButton>
+                    <RepeatButton Style="{StaticResource SliderRepeatButton}" Command="Slider.IncreaseLarge" />
+                </Track.IncreaseRepeatButton>
+            </Track>
+        </Grid>
+    </ControlTemplate>
+
+
+    <Style TargetType="{x:Type Slider}">
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="SnapsToDevicePixels" Value="true" />
+        <Setter Property="OverridesDefaultStyle" Value="true" />
+        <Style.Triggers>
+            <Trigger Property="Orientation" Value="Horizontal">
+                <Setter Property="MinHeight" Value="21" />
+                <Setter Property="MinWidth" Value="104" />
+                <Setter Property="Template" Value="{StaticResource Slider}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- CHECKBOX -->
+    <Style  TargetType="{x:Type CheckBox}">
+        <Style.Resources>
+            <Storyboard x:Key="animationFading" AutoReverse="True" RepeatBehavior="Forever">
+                <DoubleAnimation Storyboard.TargetName="rectangle1"    Storyboard.TargetProperty="Opacity"   By="1" Duration="0:0:1" BeginTime="0:0:0"/>
+            </Storyboard>
+            <Storyboard x:Key="animationStop">
+                <DoubleAnimation Storyboard.TargetName="rectangle1"   Storyboard.TargetProperty="Opacity"   From="0" To="0" Duration="0:0:1"/>
+            </Storyboard>
+        </Style.Resources>
+        <Setter Property="Foreground" Value="{StaticResource DS3TextBrush}"/>
+        <Setter Property="FontFamily" Value="{StaticResource DS3Font}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource DS3BorderBrush}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CheckBox}">
+                    <StackPanel Orientation="Horizontal">
+                        <Grid >
+                            <Border x:Name="CheckBorder" CornerRadius="0" Width="{Binding ActualHeight, RelativeSource={RelativeSource Self}}" BorderBrush="{StaticResource DS3DarkedBorderBrush}" 
+                                    BorderThickness="2" Padding="4,4,4,4" VerticalAlignment="Center" Background="{StaticResource DS3BackgroundPureBlackBrush}">
+                                <Path  x:Name="Check"   Grid.Column="1" StrokeThickness="1" Stroke="{StaticResource  DS3DarkedBorderBrush}"   Fill="{StaticResource  DS3DarkedBorderBrush}"  
+                                       HorizontalAlignment="Center"  VerticalAlignment="Center"  Data="m 0 12 l 10 10 l 14 -14 l -4 -4 l-10 10 l-6 -6 l-4 4 l 4 4"  />
+                            </Border>
+                            <Rectangle x:Name="rectangle1" Fill="{DynamicResource hoverButtonBrush}" Opacity="0" Width="{Binding ElementName=CheckBorder,Path=ActualWidth}" Height="{Binding ElementName=CheckBorder,Path=ActualHeight}"/>
+                            <Rectangle x:Name="rectangle2" Fill="{StaticResource DS3TransparentBrush}"  Width="{Binding ElementName=CheckBorder,Path=ActualWidth}" Height="{Binding ElementName=CheckBorder,Path=ActualHeight}"/>
+                        </Grid>
+                        <Grid x:Name="paddingGrid" Width="10" Height="10"/>
+                        <ContentPresenter VerticalAlignment="Center" />
+                    </StackPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="Check" Property="Fill" Value="{StaticResource DS3HoverBrush}"  />
+                        </Trigger>
+                        <Trigger Property="Content" Value="{x:Null}">
+                            <Setter TargetName="paddingGrid" Property="Visibility" Value="Collapsed"  />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Padding" Value="2,2,2,2" TargetName="CheckBorder"/>
+                            <Setter Property="Fill" TargetName="rectangle2" Value="{StaticResource hoverButtonBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <BeginStoryboard Name="IsMouseOverTrueBeginStoryboard" Storyboard="{StaticResource animationFading}" />
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard Name="IsMouseOverFalseBeginStoryboard" Storyboard="{StaticResource animationStop}" />
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--<Style TargetType="{x:Type RadioButton}" BasedOn="{StaticResource DS3RadioButton}"/>
+    <Style TargetType="{x:Type Label}" BasedOn="{StaticResource DS3Label}"/>
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource DS3Button}"/>
+    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource DS3TextBox}"/>
+    <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource DS3CheckBox}"/>
+    <Style TargetType="{x:Type Page}" BasedOn="{StaticResource DarkBackgroundPage}"/>
+    <Style TargetType="{x:Type Window}" BasedOn="{StaticResource DarkBackgroundWindow}"/>-->
+
+</ResourceDictionary>
