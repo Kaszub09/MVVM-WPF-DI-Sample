@@ -159,9 +159,9 @@ runs background processes</text>
 
     <!--=== PROGRESS INFO ===-->
     <text id="process_status_in_progress">Processed item {0} of {1}</text>
-    <text id="process_status_completed">Process finished at {0:HH:mm:ss}. Processed item {0} of {1}</text>
-    <text id="process_status_cancelled">Process cancelled at {0:HH:mm:ss}. Processed item {0} of {1}</text>
-    <text id="process_status_error">Process finishewd with error at {0:HH:mm:ss}.Processed item {0} of {1}. Error: {3}</text>
+    <text id="process_status_completed">Process finished at {2:HH:mm:ss}. Processed item {0} of {1}</text>
+    <text id="process_status_cancelled">Process cancelled at {2:HH:mm:ss}. Processed item {0} of {1}</text>
+    <text id="process_status_error">Process finishewd with error at {2:HH:mm:ss}.Processed item {0} of {1}. Error: {3}</text>
 
     
     <!--=== THEMES ===
