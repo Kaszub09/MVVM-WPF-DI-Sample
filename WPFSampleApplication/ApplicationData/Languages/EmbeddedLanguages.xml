@@ -71,9 +71,9 @@ odpalania procesów w tle</text>
     
     <!--=== PROGRESS INFO ===-->
     <text id="process_status_in_progress">Przerobiono pozycję {0} z {1}</text>
-    <text id="process_status_completed">Zakończono proces o {2:H:mm:ss}. Przerobione pozycje: {0} z {1}</text>
-    <text id="process_status_cancelled">Anulowano proces o {2:H:mm:ss}. Przerobione pozycje: {0} z {1}</text>
-    <text id="process_status_error">Proces zakończony błędem o {2:H:mm:ss}. Przerobiono: {0} z {1}. Błąd: {3}</text>
+    <text id="process_status_completed">Zakończono proces o {2:HH:mm:ss}. Przerobione pozycje: {0} z {1}</text>
+    <text id="process_status_cancelled">Anulowano proces o {2:HH:mm:ss}. Przerobione pozycje: {0} z {1}</text>
+    <text id="process_status_error">Proces zakończony błędem o {2:HH:mm:ss}. Przerobiono: {0} z {1}. Błąd: {3}</text>
 
 
 
@@ -159,9 +159,9 @@ runs background processes</text>
 
     <!--=== PROGRESS INFO ===-->
     <text id="process_status_in_progress">Processed item {0} of {1}</text>
-    <text id="process_status_completed">Process finished at {0:H:mm:ss}. Processed item {0} of {1}</text>
-    <text id="process_status_cancelled">Process cancelled at {0:H:mm:ss}. Processed item {0} of {1}</text>
-    <text id="process_status_error">Process finishewd with error at {0:H:mm:ss}.Processed item {0} of {1}. Error: {3}</text>
+    <text id="process_status_completed">Process finished at {0:HH:mm:ss}. Processed item {0} of {1}</text>
+    <text id="process_status_cancelled">Process cancelled at {0:HH:mm:ss}. Processed item {0} of {1}</text>
+    <text id="process_status_error">Process finishewd with error at {0:HH:mm:ss}.Processed item {0} of {1}. Error: {3}</text>
 
     
     <!--=== THEMES ===
